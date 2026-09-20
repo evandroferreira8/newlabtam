@@ -1,1 +1,1 @@
-/* Publicações carregadas pelo runtime principal. */
+/* As publicações do site são carregadas pelo runtime principal. */

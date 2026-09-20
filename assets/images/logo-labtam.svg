@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 470 135" role="img" aria-labelledby="title">
+<title id="title">LabTam UFRN</title>
+<rect width="470" height="135" rx="16" fill="#fff"/>
+<text x="18" y="82" font-family="Arial,Helvetica,sans-serif" font-size="68" font-weight="700" fill="#0095DB">Lab</text>
+<text x="126" y="82" font-family="Arial,Helvetica,sans-serif" font-size="68" font-weight="700" fill="#164194">Tam</text>
+<path d="M278 18h74l-13 24h-25v66h-30V42h-25z" fill="#009D43"/>
+<text x="357" y="75" font-family="Arial,Helvetica,sans-serif" font-size="31" font-weight="700" fill="#164194">UFRN</text>
+<text x="20" y="112" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#51657f">Laboratório de Tecnologia Ambiental</text>
+</svg>

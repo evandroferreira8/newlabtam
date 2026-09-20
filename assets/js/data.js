@@ -1,1 +1,1 @@
-/* Conteúdo carregado pelo runtime principal. */
+/* Os dados do site são carregados pelo runtime principal. */
