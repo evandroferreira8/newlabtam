@@ -294,7 +294,7 @@ window.LABTAM_PUBLICATIONS = [
       </div></div>
       <header class="site-header" id="topo">
         <div class="shell brand-row">
-          <a class="brand-link" href="index.html" aria-label="LabTam - página inicial"><img class="brand-logo" src="assets/images/logo-labtam.svg" alt="LabTam UFRN"></a>
+          <a class="brand-link" href="index.html" aria-label="LabTam - página inicial"><img class="brand-logo" src="assets/images/logo-labtam-color.png" alt="LabTam UFRN"></a>
           <div class="brand-copy"><span>Laboratório de Tecnologia Ambiental</span><strong>Pesquisa, infraestrutura e inovação em energia, materiais e sustentabilidade.</strong></div>
           <div class="brand-actions">
             <button class="search-trigger" type="button" aria-label="Abrir busca" title="Buscar">⌕</button>
@@ -320,7 +320,7 @@ window.LABTAM_PUBLICATIONS = [
     const el = $('#site-footer'); if(!el) return;
     el.innerHTML = `
       <footer class="footer" id="acessibilidade"><div class="shell footer-grid">
-        <div><div class="footer-logo-box"><img src="assets/images/logo-labtam.svg" alt="LabTam UFRN"></div><p>Laboratório de pesquisa com infraestrutura analítica para caracterização da biomassa, síntese e caracterização de materiais.</p><div class="footer-socials"><a class="social-mini social-youtube" href="${esc(D.media?.social?.youtube||'#')}" target="_blank" rel="noreferrer" aria-label="YouTube do LabTam"><b>YT</b><span>YouTube</span></a><a class="social-mini social-instagram" href="${esc(D.media?.social?.instagram||'#')}" target="_blank" rel="noreferrer" aria-label="Instagram do LabTam"><b>IG</b><span>Instagram</span></a><a class="social-mini social-linkedin" href="${esc(D.media?.social?.linkedin||'#')}" target="_blank" rel="noreferrer" aria-label="LinkedIn do LabTam"><b>in</b><span>LinkedIn</span></a></div></div>
+        <div><div class="footer-logo-box"><img src="assets/images/logo-labtam-negative.png" alt="LabTam UFRN"></div><p>Laboratório de pesquisa com infraestrutura analítica para caracterização da biomassa, síntese e caracterização de materiais.</p><div class="footer-socials"><a class="social-mini social-youtube" href="${esc(D.media?.social?.youtube||'#')}" target="_blank" rel="noreferrer" aria-label="YouTube do LabTam"><b>YT</b><span>YouTube</span></a><a class="social-mini social-instagram" href="${esc(D.media?.social?.instagram||'#')}" target="_blank" rel="noreferrer" aria-label="Instagram do LabTam"><b>IG</b><span>Instagram</span></a><a class="social-mini social-linkedin" href="${esc(D.media?.social?.linkedin||'#')}" target="_blank" rel="noreferrer" aria-label="LinkedIn do LabTam"><b>in</b><span>LinkedIn</span></a></div></div>
         <div><small>Contato</small><strong>${esc(c.email)}</strong><span>${esc(c.phone)}</span><span>${esc(c.address)}</span></div>
         <div><small>Links rápidos</small><a href="sobre.html">Sobre o LabTam</a><a href="equipe.html">Equipe</a><a href="publicacoes.html">Artigos publicados</a><a href="midias.html">Mídias e redes sociais</a><a href="contato.html">Contato</a></div>
         <div><small>Links úteis</small><a href="https://www.ufrn.br/" target="_blank" rel="noreferrer">Portal UFRN</a><a href="https://posgraduacao.ufrn.br/" target="_blank" rel="noreferrer">Pós-graduação UFRN</a><a href="https://sistemas.ufrn.br/" target="_blank" rel="noreferrer">Sistemas UFRN</a><a href="https://repositorio.ufrn.br/" target="_blank" rel="noreferrer">Repositório Institucional</a></div>
@@ -620,4 +620,4 @@ window.LABTAM_PUBLICATIONS = [
   document.readyState==='loading'?document.addEventListener('DOMContentLoaded',init):init();
 })();
 
-;(()=>{const id="labtam-refinements";if(document.getElementById(id))return;const link=document.createElement("link");link.id=id;link.rel="stylesheet";link.href="assets/css/refinements.css?v=20260920-1";document.head.appendChild(link);})();
+;(()=>{const id="labtam-refinements";if(document.getElementById(id))return;const link=document.createElement("link");link.id=id;link.rel="stylesheet";link.href="assets/css/refinements.css?v=20260920-2";document.head.appendChild(link);})();
