@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#164194">
+  <meta name="description" content="Conheça a equipe do Laboratório de Tecnologia Ambiental da UFRN.">
+  <title>Equipe — LabTam/UFRN</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body data-page="equipe">
+  <div id="site-header"></div>
+
+  <main id="conteudo" class="team-page">
+    <section class="team-page-hero">
+      <div class="shell team-hero-layout">
+        <figure class="team-hero-photo">
+          <img src="assets/images/equipe.jpg" alt="Equipe do Laboratório de Tecnologia Ambiental da UFRN" />
+          <figcaption>Equipe LabTam/UFRN</figcaption>
+        </figure>
+
+        <div class="team-hero-copy">
+          <p class="breadcrumb"><a href="index.html">Início</a> / Equipe</p>
+          <p class="eyebrow">Pessoas que fazem ciência</p>
+          <h1>Quem faz o <em>LabTam</em>.</h1>
+          <p>Uma equipe multidisciplinar que reúne coordenação, pesquisadores, técnicos, pós-graduandos, iniciação científica e comunicação.</p>
+          <div class="team-hero-stats" id="team-hero-stats"></div>
+          <a class="btn btn-primary" href="#diretorio-equipe">Explorar a equipe</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section team-leadership-section">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Coordenação</p>
+            <h2>Lideranças do laboratório</h2>
+          </div>
+          <p>Perfis com atuação estratégica na pesquisa, gestão científica e desenvolvimento tecnológico do LabTam.</p>
+        </div>
+        <div class="team-leadership-layout" id="team-leadership-showcase"></div>
+      </div>
+    </section>
+
+    <section class="section team-directory-section" id="diretorio-equipe">
+      <div class="shell">
+        <div class="section-head team-directory-head">
+          <div>
+            <p class="eyebrow">Diretório</p>
+            <h2>Encontre pessoas por nome ou vínculo</h2>
+          </div>
+          <p>Use a busca e os filtros para navegar por toda a equipe sem precisar percorrer uma lista interminável.</p>
+        </div>
+
+        <div class="team-toolbar-panel">
+          <label class="team-search-field">
+            <span aria-hidden="true">⌕</span>
+            <input id="team-search" type="search" placeholder="Buscar por nome, função ou grupo" autocomplete="off" />
+          </label>
+          <div class="team-filter-rail" id="team-filters" role="group" aria-label="Filtrar equipe"></div>
+        </div>
+
+        <div class="team-results-line">
+          <p id="team-results-count" aria-live="polite"></p>
+          <button id="team-clear-filter" class="team-clear-filter" type="button" hidden>Limpar filtros</button>
+        </div>
+
+        <div class="team-directory-grid" id="team-directory-grid"></div>
+        <p class="team-empty" id="team-empty" hidden>Nenhuma pessoa encontrada com esses filtros.</p>
+      </div>
+    </section>
+  </main>
+
+  <div class="team-profile-modal" id="team-profile-modal" hidden>
+    <div class="team-profile-backdrop" data-team-close></div>
+    <section class="team-profile-dialog" role="dialog" aria-modal="true" aria-labelledby="team-profile-name">
+      <button class="team-profile-close" type="button" aria-label="Fechar perfil" data-team-close>×</button>
+      <div id="team-profile-content"></div>
+    </section>
+  </div>
+
+  <div id="site-footer"></div>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/publications.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

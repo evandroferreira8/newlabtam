@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#164194">
+  <meta name="description" content="LabTam/UFRN — Laboratório de Tecnologia Ambiental">
+  <title>Infraestrutura e Equipamentos — LabTam/UFRN</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body data-page="equipamentos">
+  <div id="site-header"></div>
+  <main id="conteudo"><section class="page-hero"><div class="shell"><p class="breadcrumb"><a href="index.html">Início</a> / Infraestrutura</p><p class="eyebrow">Infraestrutura multiusuária</p><h1>Equipamentos e técnicas</h1><p>Consulte os equipamentos do laboratório por técnica, aplicação, marca ou modelo. Os detalhes reproduzem e reorganizam o conteúdo técnico disponibilizado no site vigente.</p></div></section><section class="section"><div class="shell"><div class="toolbar"><input id="equipment-search" type="search" placeholder="Buscar: DRX, FTIR, cromatografia, Shimadzu..."><button class="chip active" data-cat="todos">Todos</button><button class="chip" data-cat="materiais">Materiais</button><button class="chip" data-cat="cromatografia">Cromatografia</button><button class="chip" data-cat="espectroscopia">Espectroscopia</button><button class="chip" data-cat="microscopia">Microscopia</button><button class="chip" data-cat="termica">Análise térmica</button></div><div class="equipment-grid" id="equipment-grid"></div><p class="empty-state" id="equipment-empty" hidden>Nenhum equipamento encontrado.</p></div></section><div class="modal" id="equipment-modal" hidden><div class="modal-card"><button class="modal-close" aria-label="Fechar">×</button><div id="equipment-modal-content"></div></div></div></main>
+  <div id="site-footer"></div>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/publications.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
