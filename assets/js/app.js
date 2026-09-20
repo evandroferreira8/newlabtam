@@ -619,3 +619,5 @@ window.LABTAM_PUBLICATIONS = [
   }
   document.readyState==='loading'?document.addEventListener('DOMContentLoaded',init):init();
 })();
+
+;(()=>{const id="labtam-refinements";if(document.getElementById(id))return;const link=document.createElement("link");link.id=id;link.rel="stylesheet";link.href="assets/css/refinements.css?v=20260920-1";document.head.appendChild(link);})();
