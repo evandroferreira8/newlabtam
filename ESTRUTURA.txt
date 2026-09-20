@@ -1,0 +1,25 @@
+LABTAM - ESTRUTURA DO SITE
+
+PÁGINAS
+- index.html              Home
+- sobre.html              O LabTam
+- pesquisa.html           Linhas de pesquisa
+- equipamentos.html       Infraestrutura
+- equipe.html             Diretório dinâmico da equipe
+- noticias.html           Notícias
+- materia.html            Leitura de matérias
+- publicacoes.html        Produção científica
+- editais.html            Editais e seleções
+- auditorio.html          Auditório Oscar Chamberlain
+- midias.html             YouTube, Instagram, LinkedIn e LabTam na UFRN
+- parceiros.html          Parceiros
+- contato.html            Contato
+- busca.html              Busca global
+- 404.html                Página de erro
+
+RECURSOS
+- assets/css/styles.css   Estilos visuais e responsividade
+- assets/js/app.js        Navegação, filtros, busca, equipe, modais e interações
+- assets/js/data.js       Conteúdo estruturado do site
+- assets/js/publications.js Produção científica
+- assets/images/          Logo, foto institucional e retratos da equipe
