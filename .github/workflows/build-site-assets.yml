@@ -1,0 +1,99 @@
+name: Build LabTam site assets
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/build-site-assets.yml"
+      - "assets/payload/**"
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Rebuild static assets
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import ast
+          import base64
+          import gzip
+          import re
+
+          root = Path(".")
+          payload_dir = root / "assets" / "payload"
+          parts = [payload_dir / f"p{i}.txt" for i in range(7)]
+          encoded = "".join(p.read_text(encoding="utf-8").strip() for p in parts)
+          source = gzip.decompress(base64.b64decode(encoded)).decode("utf-8")
+
+          css_match = re.search(
+              r'__style\.textContent=(.*?);document\.head\.appendChild\(__style\);',
+              source,
+              re.S,
+          )
+          if not css_match:
+              raise RuntimeError("CSS embutido não encontrado no payload")
+          css = ast.literal_eval(css_match.group(1))
+
+          css_dir = root / "assets" / "css"
+          js_dir = root / "assets" / "js"
+          img_dir = root / "assets" / "images"
+          css_dir.mkdir(parents=True, exist_ok=True)
+          js_dir.mkdir(parents=True, exist_ok=True)
+          img_dir.mkdir(parents=True, exist_ok=True)
+
+          (css_dir / "styles.css").write_text(css, encoding="utf-8")
+
+          source = source.replace(
+              "assets/images/logo-labtam.png",
+              "assets/images/logo-labtam.svg",
+          )
+          (js_dir / "app.js").write_text(source, encoding="utf-8")
+          (js_dir / "data.js").write_text(
+              "/* Os dados do site são carregados pelo runtime principal. */\n",
+              encoding="utf-8",
+          )
+          (js_dir / "publications.js").write_text(
+              "/* As publicações do site são carregadas pelo runtime principal. */\n",
+              encoding="utf-8",
+          )
+
+          logo_svg = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 470 135" role="img" aria-labelledby="title">
+          <title id="title">LabTam UFRN</title>
+          <rect width="470" height="135" rx="16" fill="#fff"/>
+          <text x="18" y="82" font-family="Arial,Helvetica,sans-serif" font-size="68" font-weight="700" fill="#0095DB">Lab</text>
+          <text x="126" y="82" font-family="Arial,Helvetica,sans-serif" font-size="68" font-weight="700" fill="#164194">Tam</text>
+          <path d="M278 18h74l-13 24h-25v66h-30V42h-25z" fill="#009D43"/>
+          <text x="357" y="75" font-family="Arial,Helvetica,sans-serif" font-size="31" font-weight="700" fill="#164194">UFRN</text>
+          <text x="20" y="112" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#51657f">Laboratório de Tecnologia Ambiental</text>
+          </svg>"""
+          (img_dir / "logo-labtam.svg").write_text(logo_svg, encoding="utf-8")
+
+          hero_url = "https://labtam.ccet.ufrn.br/assets/img/carousel.png"
+          for html in root.glob("*.html"):
+              text = html.read_text(encoding="utf-8")
+              text = text.replace("assets/images/equipe.jpg", hero_url)
+              html.write_text(text, encoding="utf-8")
+
+          print("Assets reconstruídos com sucesso.")
+          PY
+
+      - name: Commit rebuilt assets
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/css assets/js assets/images *.html
+          if git diff --cached --quiet; then
+            echo "Nenhuma alteração pendente."
+          else
+            git commit -m "Rebuild LabTam site assets"
+            git push
+          fi
