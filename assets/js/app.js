@@ -273,6 +273,7 @@ window.LABTAM_PUBLICATIONS = [
   const nav = [
     ['sobre.html','O LabTam','sobre'],
     ['pesquisa.html','Pesquisa','pesquisa'],
+    ['sish2.html','SisH2','sish2'],
     ['equipamentos.html','Infraestrutura','equipamentos'],
     ['equipe.html','Equipe','equipe'],
     ['noticias.html','Notícias','noticias'],
@@ -596,6 +597,7 @@ window.LABTAM_PUBLICATIONS = [
     P.forEach(x=>{if(norm([x.title,x.authors,x.journal,x.year].join(' ')).includes(nq))results.push({type:'Publicação',title:x.title,text:`${x.journal} · ${x.year}`,url:'publicacoes.html'});});
     (D.editais||[]).forEach(x=>{if(norm(x.join(' ')).includes(nq))results.push({type:'Edital',title:x[1],text:`${x[0]} · ${x[2]}`,url:'editais.html'});});
     (D.media?.ufrnArticles||[]).forEach(x=>{if(norm([x.title,x.summary,x.credit,x.type].join(' ')).includes(nq))results.push({type:'Mídias',title:x.title,text:`${x.type} · ${x.credit}`,url:'midias.html'});});
+    if(norm('sish2 biosish2 biocal h2 hidrogenio renovavel biogas mcti governanca multiusuario perovskitas sherbrooke').includes(nq))results.unshift({type:'Iniciativa',title:'SisH2-MCTI — LabTam na rede do hidrogênio',text:'Pesquisa, reator BioSiSH2, calculadora BioCaL-H2, infraestrutura, projetos e acesso multiusuário.',url:'sish2.html'});
     if(norm('youtube instagram linkedin redes sociais midias videos ufrn').includes(nq))results.push({type:'Mídias',title:'Mídias e redes sociais',text:'YouTube, Instagram, LinkedIn e conteúdos do LabTam no Portal da UFRN.',url:'midias.html'});
     root.innerHTML=results.slice(0,60).map(x=>`<a class="card search-result" href="${x.url}"><span class="pub-meta">${esc(x.type)}</span><h3>${esc(x.title)}</h3><p>${esc(x.text)}</p></a>`).join('')||`<p class="empty-state">Nenhum resultado para “${esc(q)}”.</p>`;
   }
@@ -621,3 +623,5 @@ window.LABTAM_PUBLICATIONS = [
 })();
 
 ;(()=>{const id="labtam-refinements";if(document.getElementById(id))return;const link=document.createElement("link");link.id=id;link.rel="stylesheet";link.href="assets/css/refinements.css?v=20260920-2";document.head.appendChild(link);})();
+
+;(()=>{const s=document.createElement("style");s.textContent=".site-header .main-nav{flex-wrap:wrap;column-gap:18px;row-gap:0}.site-header .main-nav a{padding-block:12px}";document.head.appendChild(s);})();
