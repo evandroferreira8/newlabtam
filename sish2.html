@@ -35,6 +35,67 @@
 .sish2-page .apoio-linha{color:var(--muted);text-align:center}
 @media(max-width:1000px){.sish2-page .research-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:760px){.sish2-page .research-grid,.sish2-page .destaque-grid,.sish2-page .midia-destaque{grid-template-columns:minmax(0,1fr)}.sish2-page .section{scroll-margin-top:110px}.sish2-page .midia-destaque{padding:18px}.sish2-page .logos img{max-width:100%}}
+
+/* Ritmo visual da iniciativa: azul, ciano e verde do LabTam. */
+.sish2-page .section{padding-block:42px}
+.sish2-page .section .sub{margin-bottom:20px}
+.sish2-page .section h2:before{content:"";display:block;width:54px;height:5px;border-radius:9px;background:var(--grad);margin-bottom:14px}
+.sish2-page .page-hero{padding:30px 0;background:linear-gradient(115deg,#164194 0%,#087eac 57%,#087e48 100%);border:0}
+.sish2-page .page-hero h1,.sish2-page .page-hero p,.sish2-page .page-hero a{color:#fff}
+.sish2-page .page-hero h1{font-size:clamp(2rem,4vw,3rem)}
+.sish2-page .page-hero p:last-child{margin-bottom:0}
+.sish2-page .sish2-nav{padding-block:18px;gap:8px}
+.sish2-page .sish2-nav a{background:linear-gradient(135deg,#fff,#f1f8fa);padding:8px 12px}
+.sish2-page #osish2{background:#fff}
+.sish2-page #osish2 .research-grid{gap:14px}
+.sish2-page #osish2 .card{box-shadow:none;background:linear-gradient(145deg,#f5f9ff,#edf8f4);border:0;border-top:3px solid #009d43}
+.sish2-page #linhas{background:linear-gradient(125deg,#edf3fc 0%,#eef9fb 55%,#e9f6ee 100%)}
+.sish2-page #linhas .card{box-shadow:0 8px 22px rgba(22,65,148,.045);border:0;position:relative;overflow:hidden;padding:22px 22px 22px 27px}
+.sish2-page #linhas .card:before{content:"";position:absolute;inset:0 auto 0 0;width:5px;background:linear-gradient(#164194,#0095db)}
+.sish2-page #linhas .card:nth-child(2n):before{background:linear-gradient(#0095db,#009d43)}
+.sish2-page #infra{background:#fff}
+.sish2-page .sish2-table th{background:#164194;color:#fff}
+.sish2-page .sish2-table tr:nth-child(odd) td{background:#f3f8fc}
+.sish2-page #biosish2{background:radial-gradient(ellipse at 100% 0%,rgba(0,157,67,.5),transparent 65%),linear-gradient(125deg,#102c67,#164194 55%,#087b9b);color:#eef6ff}
+.sish2-page #biosish2 h2,.sish2-page #biosish2 h3{color:#fff}
+.sish2-page #biosish2 .sub,.sish2-page #biosish2 figcaption{color:#d8e9f6}
+.sish2-page #biosish2 .destaque-grid{margin-bottom:0;gap:34px}
+.sish2-page #biosish2 .numeros>div{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.25);padding:16px}
+.sish2-page #biosish2 .numeros strong{color:#fff}
+.sish2-page #biosish2 .foto-reator img{max-height:490px;background:rgba(255,255,255,.06)}
+.sish2-page #biocal{background:#fff;padding-block:28px}
+.sish2-page #biocal>.shell{padding:28px 32px;border:1px solid #b8dfd5;border-radius:24px;background:radial-gradient(ellipse at right top,#c8eee0,transparent 65%),linear-gradient(120deg,#f0f8ff,#eaf8f2)}
+.sish2-page #biocal .btn{background:linear-gradient(115deg,#087c48,#087eac);color:#fff}
+.sish2-page #equipe{background:#fff;padding-top:22px}
+.sish2-page #equipe .research-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.sish2-page #equipe .card{box-shadow:none;background:#f6f9fc;border-color:#e0e8f1}
+.sish2-page #equipe .card:first-child{background:linear-gradient(120deg,#edf3ff,#e3f5f4)}
+.sish2-page #multiusuario{background:linear-gradient(115deg,#eef9f3,#edf7fc)}
+.sish2-page #multiusuario .passos{max-width:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;list-style:none;padding:0;counter-reset:access}
+.sish2-page #multiusuario .passos li{counter-increment:access;position:relative;background:#fff;border:1px solid #d3e7df;border-radius:16px;padding:20px 20px 20px 64px}
+.sish2-page #multiusuario .passos li:before{content:counter(access,decimal-leading-zero);position:absolute;left:16px;top:20px;font:700 1.4rem var(--display);color:#087c48}
+.sish2-page #multiusuario .passos li:last-child{grid-column:1/-1}
+.sish2-page #projetos{background:#fff}
+.sish2-page #projetos .lista{list-style:none;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.sish2-page #projetos .lista li{padding:20px;border-radius:16px;background:linear-gradient(140deg,#f1f5fd,#f0f9f6);border-left:3px solid #0095db}
+.sish2-page #noticias{background:linear-gradient(145deg,#f1f5fc,#edf7f8)}
+.sish2-page #noticias .midia-destaque{border:0;box-shadow:0 12px 28px rgba(22,65,148,.07);margin-block:22px}
+.sish2-page #noticias .research-grid{gap:14px}
+.sish2-page #noticias .card{box-shadow:none}
+.sish2-page #apoio{background:#fff;padding-block:30px}
+.sish2-page #apoio h2{font-size:1.7rem}
+.sish2-page #apoio .logos{border:0;background:linear-gradient(110deg,#f4f8fd,#f1faf5);padding:24px}
+@media(max-width:760px){
+.sish2-page .section{padding-block:30px}
+.sish2-page .section h2{font-size:1.85rem}
+.sish2-page #biocal{padding-block:20px}
+.sish2-page #biocal>.shell{padding:24px 20px}
+.sish2-page #equipe .research-grid,.sish2-page #multiusuario .passos,.sish2-page #projetos .lista{grid-template-columns:minmax(0,1fr)}
+.sish2-page #biosish2 .destaque-grid{gap:22px}
+.sish2-page #biosish2 .foto-reator img{max-height:440px}
+.sish2-page #multiusuario .passos li{padding:17px 16px 17px 60px}
+}
+
 </style></head><body data-page="sish2"><div id="site-header"></div><main id="conteudo" class="sish2-page"><div class="page-hero"><div class="shell"><p class="breadcrumb"><a href="index.html">Início</a> / SisH2-MCTI</p><h1>SisH2-MCTI</h1><p>O LabTam na rede nacional do hidrogênio de baixa emissão de carbono.</p></div></div><nav class="sish2-nav shell" aria-label="Seções do SisH2"><a href="#osish2">O SisH2</a><a href="#linhas">Pesquisa</a><a href="#infra">Infraestrutura</a><a href="#biosish2">BioSiSH2</a><a href="#biocal">BioCaL-H2</a><a href="#equipe">Governança</a><a href="#multiusuario">Acesso</a><a href="#projetos">Projetos</a><a href="#noticias">Na mídia</a><a href="#apoio">Apoio</a></nav>
 
 
