@@ -13,17 +13,17 @@ jobs:
   migrate:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
       - name: Download external LabTam images and localize references
         shell: bash
         run: |
           python3 - <<'PY'
           from pathlib import Path
-          from urllib.parse import urlparse, unquote, quote
+          from urllib.parse import unquote, quote
           from urllib.request import Request, urlopen
-          import re, time, ssl
+          from concurrent.futures import ThreadPoolExecutor, as_completed
+          import re, ssl
 
           ROOT = Path(".")
           BASE = "https://labtam.ccet.ufrn.br/assets/img/"
@@ -31,8 +31,7 @@ jobs:
           text_exts = {".html", ".js", ".css"}
           files = [p for p in ROOT.rglob("*") if p.is_file() and p.suffix.lower() in text_exts and ".git" not in p.parts]
 
-          contents = {}
-          urls = set()
+          contents, urls = {}, set()
           for p in files:
               try:
                   txt = p.read_text(encoding="utf-8")
@@ -42,62 +41,54 @@ jobs:
               urls.update(pattern.findall(txt))
 
           print(f"Found {len(urls)} external LabTam image URLs")
-          successes = []
-          failures = []
-
           ctx = ssl.create_default_context()
-          headers = {
-              "User-Agent": "Mozilla/5.0 (compatible; LabTamImageMigration/1.0; +https://github.com/evandroferreira8/newlabtam)"
-          }
+          headers = {"User-Agent": "Mozilla/5.0 LabTamImageMigration/1.1"}
 
-          def looks_like_image(data: bytes):
+          def looks_like_image(data):
               return (
                   data.startswith(b"\xff\xd8\xff") or
                   data.startswith(b"\x89PNG\r\n\x1a\n") or
                   data.startswith(b"GIF87a") or
                   data.startswith(b"GIF89a") or
-                  data.startswith(b"RIFF") and data[8:12] == b"WEBP"
+                  (data.startswith(b"RIFF") and len(data) >= 12 and data[8:12] == b"WEBP")
               )
 
-          for i, url in enumerate(sorted(urls), 1):
+          def fetch(url):
               encoded_rel = url[len(BASE):]
               decoded_rel = unquote(encoded_rel)
               target = ROOT / "assets" / "images" / decoded_rel
-              target.parent.mkdir(parents=True, exist_ok=True)
+              try:
+                  req = Request(url, headers=headers)
+                  with urlopen(req, timeout=12, context=ctx) as r:
+                      data = r.read()
+                      ctype = (r.headers.get("Content-Type") or "").lower()
+                  if not data:
+                      raise RuntimeError("empty response")
+                  if not ("image/" in ctype or looks_like_image(data)):
+                      raise RuntimeError(f"not an image ({ctype or 'unknown content-type'})")
+                  target.parent.mkdir(parents=True, exist_ok=True)
+                  target.write_bytes(data)
+                  local = "assets/images/" + quote(decoded_rel, safe="/-_.~")
+                  return url, local, len(data), None
+              except Exception as e:
+                  return url, None, 0, str(e)
 
-              ok = False
-              last_error = None
-              for attempt in range(3):
-                  try:
-                      req = Request(url, headers=headers)
-                      with urlopen(req, timeout=30, context=ctx) as r:
-                          data = r.read()
-                          content_type = (r.headers.get("Content-Type") or "").lower()
-                      if not data:
-                          raise RuntimeError("empty response")
-                      if not ("image/" in content_type or looks_like_image(data)):
-                          raise RuntimeError(f"response is not an image ({content_type or 'unknown content-type'})")
-                      target.write_bytes(data)
-                      ok = True
-                      break
-                  except Exception as e:
-                      last_error = e
-                      time.sleep(2 * (attempt + 1))
+          results = []
+          with ThreadPoolExecutor(max_workers=16) as ex:
+              futs = [ex.submit(fetch, u) for u in sorted(urls)]
+              for fut in as_completed(futs):
+                  results.append(fut.result())
 
-              if ok:
-                  local_url = "assets/images/" + quote(decoded_rel, safe="/-_.~")
-                  for p, txt in list(contents.items()):
-                      if url in txt:
-                          contents[p] = txt.replace(url, local_url)
-                  successes.append((url, local_url, len(data)))
-                  print(f"[{i}/{len(urls)}] OK   {url} -> {local_url} ({len(data)} bytes)")
-              else:
-                  failures.append((url, str(last_error)))
-                  print(f"[{i}/{len(urls)}] FAIL {url}: {last_error}")
+          successes = [(u,l,n) for u,l,n,e in results if l]
+          failures = [(u,e) for u,l,n,e in results if not l]
+
+          for url, local, n in successes:
+              for p, txt in list(contents.items()):
+                  if url in txt:
+                      contents[p] = txt.replace(url, local)
 
           for p, txt in contents.items():
-              old = p.read_text(encoding="utf-8")
-              if txt != old:
+              if txt != p.read_text(encoding="utf-8"):
                   p.write_text(txt, encoding="utf-8")
 
           report = [
@@ -108,12 +99,13 @@ jobs:
               f"- Still external / failed: {len(failures)}",
               "",
               "## Localized",
+              *[f"- `{u}` → `{l}` ({n} bytes)" for u,l,n in sorted(successes)],
+              "",
+              "## Failed",
+              *[f"- `{u}` — {e}" for u,e in sorted(failures)],
+              ""
           ]
-          report += [f"- `{u}` → `{l}` ({n} bytes)" for u,l,n in successes]
-          report += ["", "## Failed"]
-          report += [f"- `{u}` — {e}" for u,e in failures]
-          Path("IMAGE-MIGRATION-REPORT.md").write_text("\n".join(report) + "\n", encoding="utf-8")
-
+          Path("IMAGE-MIGRATION-REPORT.md").write_text("\n".join(report), encoding="utf-8")
           print(f"Migration complete: {len(successes)} localized; {len(failures)} failed.")
           PY
 
@@ -127,5 +119,6 @@ jobs:
             echo "No migration changes to commit."
           else
             git commit -m "Localize LabTam images for reliable GitHub Pages loading"
+            git pull --rebase origin main
             git push
           fi
