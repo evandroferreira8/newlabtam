@@ -1,22 +1,26 @@
 /* Ajustes de harmonia visual para a pagina Equipe e rodape do LabTam. */
 
 .team-page-hero {
-  padding-block: clamp(42px, 6vw, 74px);
+  padding-block: clamp(32px, 4.5vw, 54px) clamp(44px, 6vw, 68px);
 }
 
 .team-hero-layout {
   align-items: stretch;
-  gap: clamp(30px, 5vw, 56px);
+  gap: clamp(28px, 4vw, 42px);
 }
 
 .team-hero-photo {
   align-self: stretch;
+  display: flex;
+  min-height: 0;
 }
 
 .team-hero-photo img {
-  height: 100%;
-  min-height: clamp(420px, 42vw, 560px);
+  flex: 1;
+  height: auto;
+  min-height: 100%;
   object-fit: cover;
+  object-position: center;
 }
 
 .team-hero-copy {
@@ -25,7 +29,8 @@
   flex-direction: column;
   justify-content: center;
   max-width: 440px;
-  padding-block: clamp(24px, 3vw, 38px);
+  min-height: clamp(560px, 50vw, 728px);
+  padding-block: clamp(30px, 4vw, 48px);
 }
 
 .team-hero-copy h1 {
@@ -135,6 +140,10 @@
     gap: 24px;
   }
 
+  .team-hero-photo {
+    display: block;
+  }
+
   .team-hero-photo img {
     min-height: 0;
     height: auto;
@@ -142,6 +151,7 @@
 
   .team-hero-copy {
     max-width: none;
+    min-height: 0;
     padding-block: 0;
   }
 
