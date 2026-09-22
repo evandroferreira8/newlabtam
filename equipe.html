@@ -84,6 +84,47 @@
   <script src="assets/js/data.js"></script>
   <script src="assets/js/publications.js"></script>
   <script src="assets/js/app.js"></script>
-  <link rel="stylesheet" href="assets/css/layout-fixes.css?v=20260922-1">
+  <link rel="stylesheet" href="assets/css/layout-fixes.css?v=20260922-2">
+  <script>
+    (() => {
+      const stats = document.getElementById('team-hero-stats');
+      if (!stats) return;
+
+      const animateStats = () => {
+        const values = [...stats.querySelectorAll('strong')];
+        values.forEach((node) => {
+          const finalValue = Number(node.textContent.replace(/\D/g, ''));
+          if (!finalValue || node.dataset.animated === 'true') return;
+
+          node.dataset.animated = 'true';
+          const duration = 1100;
+          const start = performance.now();
+
+          const step = (now) => {
+            const progress = Math.min((now - start) / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 3);
+            node.textContent = String(Math.round(finalValue * eased));
+            if (progress < 1) requestAnimationFrame(step);
+          };
+
+          node.textContent = '0';
+          requestAnimationFrame(step);
+        });
+      };
+
+      if (!('IntersectionObserver' in window)) {
+        animateStats();
+        return;
+      }
+
+      const observer = new IntersectionObserver((entries) => {
+        if (!entries.some((entry) => entry.isIntersecting)) return;
+        animateStats();
+        observer.disconnect();
+      }, { threshold: 0.35 });
+
+      observer.observe(stats);
+    })();
+  </script>
 </body>
 </html>
