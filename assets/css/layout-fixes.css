@@ -7,6 +7,7 @@
 .team-hero-layout {
   align-items: center;
   gap: clamp(28px, 4vw, 42px);
+  grid-template-columns: minmax(0, 1.45fr) minmax(340px, 0.72fr);
 }
 
 .team-hero-photo {
@@ -28,23 +29,34 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  max-width: 440px;
+  max-width: 390px;
   min-height: 0;
-  padding: clamp(24px, 2.6vw, 32px) clamp(24px, 2.8vw, 32px);
+  padding: 26px 28px;
+}
+
+.team-hero-copy::before {
+  right: -96px;
+  top: -88px;
+  width: 190px;
+  height: 190px;
 }
 
 .team-hero-copy .breadcrumb {
-  margin-bottom: 14px;
+  font-size: 0.78rem;
+  margin-bottom: 10px;
 }
 
 .team-hero-copy .eyebrow {
-  margin-bottom: 8px;
+  font-size: 0.67rem;
+  letter-spacing: 0.18em;
+  margin-bottom: 6px;
 }
 
 .team-hero-copy h1 {
-  font-size: clamp(2.45rem, 4.1vw, 3.7rem);
-  line-height: 1.03;
-  margin-block: 8px 14px;
+  font-size: clamp(2.2rem, 3.35vw, 3.05rem);
+  letter-spacing: -0.035em;
+  line-height: 1.01;
+  margin-block: 6px 12px;
   overflow: visible;
 }
 
@@ -56,27 +68,39 @@
 }
 
 .team-hero-copy > p:not(.breadcrumb, .eyebrow) {
-  font-size: 1rem;
-  line-height: 1.48;
-  max-width: 36rem;
-  margin-top: 10px;
+  font-size: 0.91rem;
+  line-height: 1.45;
+  max-width: 31rem;
+  margin: 8px 0 0;
 }
 
 .team-hero-stats {
-  gap: 10px;
-  margin-block: clamp(16px, 2vw, 22px);
+  gap: 8px;
+  margin-block: 14px 16px;
 }
 
 .team-hero-stats div {
-  padding: 12px 14px;
+  border-radius: 14px;
+  min-height: 66px;
+  padding: 10px 12px;
 }
 
 .team-hero-stats strong {
-  font-size: 1.35rem;
+  font-size: 1.25rem;
+  margin-bottom: 3px;
+}
+
+.team-hero-stats span {
+  font-size: 0.73rem;
+  line-height: 1.22;
 }
 
 .team-hero-copy > .btn {
-  margin-top: 12px;
+  align-self: flex-start;
+  font-size: 0.9rem;
+  margin-top: 8px;
+  min-height: 40px;
+  padding: 10px 15px;
 }
 
 .team-leadership-section {
@@ -164,6 +188,7 @@
   .team-hero-layout {
     align-items: stretch;
     gap: 24px;
+    grid-template-columns: 1fr;
   }
 
   .team-hero-photo,
