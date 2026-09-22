@@ -1,41 +1,46 @@
 /* Ajustes de harmonia visual para a pagina Equipe e rodape do LabTam. */
 
 .team-page-hero {
-  padding-block: clamp(32px, 4.5vw, 54px) clamp(44px, 6vw, 68px);
+  padding-block: clamp(34px, 4vw, 52px) clamp(42px, 5vw, 62px);
 }
 
 .team-hero-layout {
-  align-items: stretch;
+  align-items: start;
   gap: clamp(28px, 4vw, 42px);
 }
 
 .team-hero-photo {
-  align-self: stretch;
-  display: flex;
-  min-height: 0;
+  align-self: start;
+  display: block;
+  width: 100%;
 }
 
 .team-hero-photo img {
-  flex: 1;
   height: auto;
-  min-height: 100%;
+  min-height: 0;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
-  object-position: center;
+  object-position: center 43%;
 }
 
 .team-hero-copy {
-  align-self: stretch;
+  align-self: start;
   display: flex;
   flex-direction: column;
   justify-content: center;
   max-width: 440px;
-  min-height: clamp(560px, 50vw, 728px);
-  padding-block: clamp(30px, 4vw, 48px);
+  min-height: 0;
+  padding: clamp(28px, 3.2vw, 38px) clamp(28px, 3.2vw, 34px);
+}
+
+.team-hero-copy .breadcrumb {
+  margin-bottom: 18px;
 }
 
 .team-hero-copy h1 {
+  font-size: clamp(2.6rem, 4.5vw, 4.15rem);
   line-height: 1.04;
-  margin-block: 12px 18px;
+  margin-block: 10px 18px;
   overflow: visible;
 }
 
@@ -48,10 +53,15 @@
 
 .team-hero-copy > p:not(.breadcrumb, .eyebrow) {
   max-width: 38rem;
+  margin-top: 14px;
 }
 
 .team-hero-stats {
-  margin-block: clamp(22px, 3vw, 30px);
+  margin-block: clamp(20px, 2.4vw, 26px);
+}
+
+.team-hero-copy > .btn {
+  margin-top: 16px;
 }
 
 .team-leadership-section {
@@ -140,19 +150,14 @@
     gap: 24px;
   }
 
-  .team-hero-photo {
-    display: block;
-  }
-
   .team-hero-photo img {
-    min-height: 0;
-    height: auto;
+    aspect-ratio: 16 / 10;
+    object-position: center;
   }
 
   .team-hero-copy {
     max-width: none;
-    min-height: 0;
-    padding-block: 0;
+    padding: 26px 22px;
   }
 
   .team-hero-copy h1 {
