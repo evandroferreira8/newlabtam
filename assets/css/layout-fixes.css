@@ -1,0 +1,163 @@
+/* Ajustes de harmonia visual para a pagina Equipe e rodape do LabTam. */
+
+.team-page-hero {
+  padding-block: clamp(42px, 6vw, 74px);
+}
+
+.team-hero-layout {
+  align-items: stretch;
+  gap: clamp(30px, 5vw, 56px);
+}
+
+.team-hero-photo {
+  align-self: stretch;
+}
+
+.team-hero-photo img {
+  height: 100%;
+  min-height: clamp(420px, 42vw, 560px);
+  object-fit: cover;
+}
+
+.team-hero-copy {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 440px;
+  padding-block: clamp(24px, 3vw, 38px);
+}
+
+.team-hero-copy h1 {
+  line-height: 1.04;
+  margin-block: 12px 18px;
+  overflow: visible;
+}
+
+.team-hero-copy h1 em {
+  display: inline-block;
+  line-height: 1.08;
+  padding-inline-end: 0.04em;
+  padding-bottom: 0.04em;
+}
+
+.team-hero-copy > p:not(.breadcrumb, .eyebrow) {
+  max-width: 38rem;
+}
+
+.team-hero-stats {
+  margin-block: clamp(22px, 3vw, 30px);
+}
+
+.team-leadership-section {
+  padding-block: clamp(56px, 7vw, 86px);
+}
+
+.team-leadership-section .section-head {
+  align-items: flex-start;
+}
+
+.team-leadership-section .section-head > p {
+  max-width: 580px;
+}
+
+.team-leadership-layout,
+.team-leadership-showcase {
+  margin-top: clamp(28px, 4vw, 42px);
+  align-items: stretch;
+}
+
+.team-lead-primary,
+.team-lead-mini {
+  height: 100%;
+}
+
+.footer-grid > div:nth-child(2) {
+  display: grid;
+  align-content: start;
+  gap: 12px;
+}
+
+.footer-grid > div:nth-child(2) small {
+  margin-bottom: 2px;
+}
+
+.footer-grid > div:nth-child(2) strong,
+.footer-grid > div:nth-child(2) span {
+  display: block;
+  line-height: 1.55;
+  position: relative;
+  padding-top: 18px;
+}
+
+.footer-grid > div:nth-child(2) strong {
+  overflow-wrap: anywhere;
+}
+
+.footer-grid > div:nth-child(2) span {
+  color: rgba(255, 255, 255, 0.78);
+  max-width: 28ch;
+}
+
+.footer-grid > div:nth-child(2) strong::before,
+.footer-grid > div:nth-child(2) span::before {
+  color: rgba(255, 255, 255, 0.52);
+  content: "";
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  left: 0;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  position: absolute;
+  text-transform: uppercase;
+  top: 0;
+}
+
+.footer-grid > div:nth-child(2) strong::before {
+  content: "E-mail";
+}
+
+.footer-grid > div:nth-child(2) span:nth-of-type(1)::before {
+  content: "Telefone";
+}
+
+.footer-grid > div:nth-child(2) span:nth-of-type(2)::before {
+  content: "Endereço";
+}
+
+@media (max-width: 900px) {
+  .team-page-hero {
+    padding-block: 28px 44px;
+  }
+
+  .team-hero-layout {
+    gap: 24px;
+  }
+
+  .team-hero-photo img {
+    min-height: 0;
+    height: auto;
+  }
+
+  .team-hero-copy {
+    max-width: none;
+    padding-block: 0;
+  }
+
+  .team-hero-copy h1 {
+    line-height: 1.08;
+  }
+
+  .team-leadership-section {
+    padding-block: 46px 58px;
+  }
+
+  .footer-grid > div:nth-child(2) {
+    gap: 10px;
+  }
+
+  .footer-grid > div:nth-child(2) span {
+    max-width: none;
+  }
+}
