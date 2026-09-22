@@ -46,41 +46,41 @@
 .team-hero-copy .breadcrumb {
   font-size: 0.72rem;
   line-height: 1.2;
-  margin-bottom: 8px;
+  margin-bottom: 7px;
 }
 
 .team-hero-copy .eyebrow {
   font-size: 0.62rem;
   letter-spacing: 0.18em;
-  line-height: 1.25;
-  margin-bottom: 4px;
+  line-height: 1.2;
+  margin-bottom: 2px;
 }
 
 .team-hero-copy h1 {
   font-size: clamp(2rem, 2.85vw, 2.62rem);
   letter-spacing: -0.03em;
-  line-height: 1;
-  margin-block: 4px 10px;
+  line-height: 0.98;
+  margin-block: 2px 4px;
   overflow: visible;
 }
 
 .team-hero-copy h1 em {
   display: inline-block;
-  line-height: 1.06;
+  line-height: 1.04;
   padding-inline-end: 0.04em;
-  padding-bottom: 0.03em;
+  padding-bottom: 0.02em;
 }
 
 .team-hero-copy > p:not(.breadcrumb, .eyebrow) {
   font-size: 0.84rem;
-  line-height: 1.38;
+  line-height: 1.34;
   max-width: 28rem;
-  margin: 6px 0 0;
+  margin: 0;
 }
 
 .team-hero-stats {
   gap: 7px;
-  margin-block: 11px 12px;
+  margin-block: 9px 10px;
 }
 
 .team-hero-stats div {
@@ -104,7 +104,7 @@
   align-self: flex-start;
   border-radius: 11px;
   font-size: 0.82rem;
-  margin-top: 6px;
+  margin-top: 4px;
   min-height: 36px;
   padding: 8px 13px;
 }
