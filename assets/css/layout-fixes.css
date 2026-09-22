@@ -5,12 +5,12 @@
 }
 
 .team-hero-layout {
-  align-items: start;
+  align-items: center;
   gap: clamp(28px, 4vw, 42px);
 }
 
 .team-hero-photo {
-  align-self: start;
+  align-self: center;
   display: block;
   width: 100%;
 }
@@ -18,29 +18,33 @@
 .team-hero-photo img {
   height: auto;
   min-height: 0;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-  object-position: center 43%;
+  aspect-ratio: auto;
+  object-fit: contain;
+  object-position: center;
 }
 
 .team-hero-copy {
-  align-self: start;
+  align-self: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   max-width: 440px;
   min-height: 0;
-  padding: clamp(28px, 3.2vw, 38px) clamp(28px, 3.2vw, 34px);
+  padding: clamp(24px, 2.6vw, 32px) clamp(24px, 2.8vw, 32px);
 }
 
 .team-hero-copy .breadcrumb {
-  margin-bottom: 18px;
+  margin-bottom: 14px;
+}
+
+.team-hero-copy .eyebrow {
+  margin-bottom: 8px;
 }
 
 .team-hero-copy h1 {
-  font-size: clamp(2.6rem, 4.5vw, 4.15rem);
-  line-height: 1.04;
-  margin-block: 10px 18px;
+  font-size: clamp(2.45rem, 4.1vw, 3.7rem);
+  line-height: 1.03;
+  margin-block: 8px 14px;
   overflow: visible;
 }
 
@@ -52,16 +56,27 @@
 }
 
 .team-hero-copy > p:not(.breadcrumb, .eyebrow) {
-  max-width: 38rem;
-  margin-top: 14px;
+  font-size: 1rem;
+  line-height: 1.48;
+  max-width: 36rem;
+  margin-top: 10px;
 }
 
 .team-hero-stats {
-  margin-block: clamp(20px, 2.4vw, 26px);
+  gap: 10px;
+  margin-block: clamp(16px, 2vw, 22px);
+}
+
+.team-hero-stats div {
+  padding: 12px 14px;
+}
+
+.team-hero-stats strong {
+  font-size: 1.35rem;
 }
 
 .team-hero-copy > .btn {
-  margin-top: 16px;
+  margin-top: 12px;
 }
 
 .team-leadership-section {
@@ -147,12 +162,13 @@
   }
 
   .team-hero-layout {
+    align-items: stretch;
     gap: 24px;
   }
 
-  .team-hero-photo img {
-    aspect-ratio: 16 / 10;
-    object-position: center;
+  .team-hero-photo,
+  .team-hero-copy {
+    align-self: stretch;
   }
 
   .team-hero-copy {
