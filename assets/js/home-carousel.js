@@ -1,9 +1,9 @@
 (function(){
   const photos = [
+    { src: 'assets/images/carousel.png', alt: 'Registros da equipe do LabTam/UFRN' },
     { src: 'assets/images/equipe-home.jpg', alt: 'Equipe do LabTam/UFRN' },
-    { src: 'assets/images/sobre_LabTAm1.jpg', alt: 'Registro do LabTam/UFRN' },
-    { src: 'assets/images/sobre_LabTAm2.jpg', alt: 'Atividade do LabTam/UFRN' },
-    { src: 'assets/images/sobre_LabTAm3.jpeg', alt: 'Equipe e infraestrutura do LabTam/UFRN' }
+    { src: 'assets/images/materias/materia_1786459290_6a7b349aa08f0.jpeg', alt: 'Atividade de pesquisa e comunicação do LabTam/UFRN' },
+    { src: 'assets/images/materias/materia_1786539685_6a7c6ea5c3bdb.jpg', alt: 'Registro institucional relacionado ao LabTam/UFRN' }
   ];
 
   function init(){
@@ -16,6 +16,7 @@
       const img = document.createElement('img');
       img.src = photo.src;
       img.alt = photo.alt;
+      img.decoding = 'async';
       img.loading = index === 0 ? 'eager' : 'lazy';
       img.className = 'hero-slide' + (index === 0 ? ' is-active' : '');
       stack.appendChild(img);
@@ -28,7 +29,7 @@
       slides[current].classList.remove('is-active');
       current = (current + 1) % slides.length;
       slides[current].classList.add('is-active');
-    }, 5600);
+    }, 6200);
   }
 
   document.readyState === 'loading' ? document.addEventListener('DOMContentLoaded', init) : init();
