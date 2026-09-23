@@ -3,38 +3,38 @@
 
   const news = [
     {
-      title: 'LabTam fortalece pesquisa, formacao e inovacao em tecnologia ambiental',
+      title: 'LabTam fortalece pesquisa, formação e inovação em tecnologia ambiental',
       tag: 'Institucional',
-      text: 'Acompanhe as principais frentes do laboratorio em caracterizacao de biomassa, materiais, sustentabilidade e apoio a projetos multiusuarios.',
+      text: 'Acompanhe as principais frentes do laboratório em caracterização de biomassa, materiais, sustentabilidade e apoio a projetos multiusuários.',
       image: 'assets/images/equipe-home.jpg',
       href: 'sobre.html'
     },
     {
-      title: 'Infraestrutura analitica conecta ciencia, energia e sustentabilidade',
+      title: 'Infraestrutura analítica conecta ciência, energia e sustentabilidade',
       tag: 'Infraestrutura',
-      text: 'Equipamentos e metodos do LabTam apoiam pesquisas em materiais, catalise, biomassa, hidrogenio e processos ambientais.',
+      text: 'Equipamentos e métodos do LabTam apoiam pesquisas em materiais, catálise, biomassa, hidrogênio e processos ambientais.',
       image: 'assets/images/sobre_LabTAm2.jpg',
       href: 'equipamentos.html'
     },
     {
-      title: 'Equipe multidisciplinar amplia a divulgacao cientifica do LabTam',
+      title: 'Equipe multidisciplinar amplia a divulgação científica do LabTam',
       tag: 'Equipe',
-      text: 'Pesquisadores, tecnicos, pos-graduandos, estudantes e comunicacao trabalham juntos para dar visibilidade a resultados e oportunidades.',
+      text: 'Pesquisadores, técnicos, pós-graduandos, estudantes e comunicação trabalham juntos para dar visibilidade a resultados e oportunidades.',
       image: 'assets/images/sobre_LabTAm3.jpeg',
       href: 'equipe.html'
     }
   ];
 
   const social = [
-    { name: 'YouTube', handle: '@ufrn.labtam', text: 'Videos institucionais, registros de atividades e conteudos de divulgacao cientifica.', href: 'https://www.youtube.com/@ufrn.labtam' },
-    { name: 'Instagram', handle: '@labtam.ufrn', text: 'Bastidores, eventos, chamadas, equipe e rotina do laboratorio em formato rapido.', href: 'https://www.instagram.com/labtam.ufrn/' },
-    { name: 'LinkedIn', handle: 'LabTam UFRN', text: 'Atualizacoes institucionais, conexoes profissionais e comunicacao com parceiros.', href: 'https://www.linkedin.com/company/labtam-ufrn' }
+    { name: 'YouTube', handle: '@ufrn.labtam', text: 'Vídeos institucionais, registros de atividades e conteúdos de divulgação científica.', href: 'https://www.youtube.com/@ufrn.labtam' },
+    { name: 'Instagram', handle: '@labtam.ufrn', text: 'Bastidores, eventos, chamadas, equipe e rotina do laboratório em formato rápido.', href: 'https://www.instagram.com/labtam.ufrn/' },
+    { name: 'LinkedIn', handle: 'LabTam UFRN', text: 'Atualizações institucionais, conexões profissionais e comunicação com parceiros.', href: 'https://www.linkedin.com/company/labtam-ufrn' }
   ];
 
   const ufrn = [
-    { title: 'Portal UFRN', type: 'Institucional', text: 'Publicacoes, reportagens e noticias que ampliam a circulacao institucional das acoes do LabTam.', href: 'https://ufrn.br/' },
-    { title: 'Centro de Ciencias Exatas e da Terra', type: 'CCET', text: 'Contexto academico do LabTam na UFRN e conexao com ensino, pesquisa e extensao.', href: 'https://ccet.ufrn.br/' },
-    { title: 'Programas de pos-graduacao', type: 'Formacao', text: 'Pesquisa e formacao avancada conectadas as linhas cientificas desenvolvidas no laboratorio.', href: 'https://posgraduacao.ufrn.br/' }
+    { title: 'Portal UFRN', type: 'Institucional', text: 'Publicações, reportagens e notícias que ampliam a circulação institucional das ações do LabTam.', href: 'https://ufrn.br/' },
+    { title: 'Centro de Ciências Exatas e da Terra', type: 'CCET', text: 'Contexto acadêmico do LabTam na UFRN e conexão com ensino, pesquisa e extensão.', href: 'https://ccet.ufrn.br/' },
+    { title: 'Programas de pós-graduação', type: 'Formação', text: 'Pesquisa e formação avançada conectadas às linhas científicas desenvolvidas no laboratório.', href: 'https://posgraduacao.ufrn.br/' }
   ];
 
   function renderNews(){
@@ -47,7 +47,7 @@
           <span class="meta">${esc(item.tag)}</span>
           <h3>${esc(item.title)}</h3>
           <p>${esc(item.text)}</p>
-          <a class="text-link" href="${esc(item.href)}">Acessar conteudo</a>
+          <a class="text-link" href="${esc(item.href)}">Acessar conteúdo</a>
         </div>
       </article>`).join('');
   }
@@ -60,8 +60,8 @@
         <div class="communication-video-mark" aria-hidden="true"><span></span></div>
         <div>
           <p class="eyebrow">Canal oficial</p>
-          <h3>LabTam em video</h3>
-          <p>Um ponto de acesso para acompanhar apresentacoes, registros e conteudos audiovisuais do Laboratorio de Tecnologia Ambiental.</p>
+          <h3>LabTam em vídeo</h3>
+          <p>Um ponto de acesso para acompanhar apresentações, registros e conteúdos audiovisuais do Laboratório de Tecnologia Ambiental.</p>
           <div class="button-row"><a class="btn btn-primary" href="https://www.youtube.com/@ufrn.labtam" target="_blank" rel="noreferrer">Abrir canal no YouTube</a></div>
         </div>
       </div>`;
