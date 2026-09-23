@@ -52,6 +52,11 @@
       if (mediaLink) mediaLink.remove();
     });
 
+    document.querySelectorAll('a').forEach((link) => {
+      const label = link.textContent.trim();
+      if (label === 'Redes e mídia' || label === 'Mídias e redes sociais') link.textContent = 'Comunicação';
+    });
+
     if (document.body && document.body.dataset.page === 'comunicacao') {
       document.querySelectorAll('a[href="comunicacao.html"]').forEach((link) => link.classList.add('active'));
     }
