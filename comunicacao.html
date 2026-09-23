@@ -4,113 +4,154 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#164194">
-  <meta name="description" content="Hub de comunicação do LabTam/UFRN com notícias, vídeos, redes sociais e conteúdos institucionais.">
+  <meta name="description" content="Comunicação do LabTam/UFRN: matérias, mídia, canais oficiais e presença institucional.">
   <meta property="og:title" content="Comunicação — LabTam/UFRN">
-  <meta property="og:description" content="Notícias, vídeos, redes sociais e presença institucional do LabTam reunidos em um só lugar.">
+  <meta property="og:description" content="Hub editorial do LabTam com notícias, reportagens, redes e conteúdos institucionais.">
   <title>Comunicação — LabTam/UFRN</title>
   <link rel="stylesheet" href="assets/css/styles.css">
-  <link rel="stylesheet" href="assets/css/comunicacao.css?v=20260922-2">
-  <link rel="stylesheet" href="assets/css/comunicacao-fix.css?v=20260922-1">
+  <link rel="stylesheet" href="assets/css/comunicacao-fix.css?v=20260922-4">
 </head>
 <body data-page="comunicacao">
   <div id="site-header"></div>
-  <main id="conteudo">
-    <section class="communication-hero">
-      <div class="shell communication-hero-grid">
-        <div>
+  <main id="conteudo" class="comm-page">
+    <section class="comm-hero">
+      <div class="shell comm-hero-grid">
+        <div class="comm-hero-copy">
           <p class="breadcrumb"><a href="index.html">Início</a> / Comunicação</p>
           <p class="eyebrow">Hub de informações do LabTam</p>
-          <h1>Ciência em <em>movimento</em>.</h1>
-          <p>Um espaço para acompanhar notícias, vídeos, redes sociais, reportagens institucionais e registros que mostram o LabTam em pesquisa, formação, inovação e diálogo com a sociedade.</p>
-          <div class="communication-actions">
+          <h1>Comunicação que aproxima ciência, pessoas e impacto.</h1>
+          <p>Um ponto central para acompanhar matérias, registros, vídeos, redes sociais e publicações institucionais relacionadas ao LabTam/UFRN.</p>
+          <div class="comm-actions">
             <a class="btn btn-primary" href="#materias">Ver matérias</a>
-            <a class="btn btn-secondary" href="#redes">Acompanhar canais</a>
+            <a class="btn btn-secondary" href="#comparativo">Ver comparativo</a>
           </div>
         </div>
-        <aside class="communication-panel" aria-label="Resumo editorial do LabTam">
-          <div class="communication-signal" aria-hidden="true"><span></span><span></span><span></span></div>
-          <div class="communication-panel-content">
-            <small>Comunicação integrada</small>
-            <strong>Notícias, mídia e presença institucional.</strong>
-            <p>O LabTam reunido em uma experiência editorial única, com leitura rápida, links diretos e conteúdo organizado por finalidade.</p>
-          </div>
+        <aside class="comm-hero-card" aria-label="Resumo da comunicação do LabTam">
+          <span>Comunicação integrada</span>
+          <strong>Notícias, mídia e presença institucional em uma página só.</strong>
+          <p>O visitante encontra rapidamente o que foi publicado, onde acompanhar o laboratório e como cada canal se conecta.</p>
         </aside>
       </div>
     </section>
 
-    <section class="communication-overview">
-      <div class="shell communication-cards">
-        <article class="communication-card"><b>N</b><h3>Notícias</h3><p>Matérias produzidas sobre pesquisas, projetos, eventos e oportunidades do laboratório.</p></article>
-        <article class="communication-card"><b>V</b><h3>Vídeos</h3><p>Conteúdos audiovisuais para apresentar infraestrutura, atividades e bastidores.</p></article>
-        <article class="communication-card"><b>R</b><h3>Redes</h3><p>Canais oficiais para acompanhar novidades, registros e chamadas importantes.</p></article>
-        <article class="communication-card"><b>U</b><h3>UFRN</h3><p>Reportagens e publicações institucionais que ampliam o alcance do LabTam.</p></article>
+    <section class="comm-strip" aria-label="Áreas de comunicação">
+      <div class="shell comm-strip-grid">
+        <article><span>01</span><strong>Matérias</strong><p>Reportagens e textos de divulgação científica.</p></article>
+        <article><span>02</span><strong>Mídia</strong><p>Vídeos, registros e conteúdos audiovisuais.</p></article>
+        <article><span>03</span><strong>Redes</strong><p>Canais para acompanhar o cotidiano do laboratório.</p></article>
+        <article><span>04</span><strong>Institucional</strong><p>Publicações da UFRN e de parceiros.</p></article>
       </div>
     </section>
 
     <section class="section" id="materias">
-      <div class="shell communication-feature-grid">
-        <div>
-          <div class="section-head">
-            <div><p class="eyebrow">Divulgação científica</p><h2>Matérias em destaque</h2></div>
+      <div class="shell">
+        <div class="section-head comm-section-head">
+          <div>
+            <p class="eyebrow">Divulgação científica</p>
+            <h2>Matérias do LabTam</h2>
           </div>
-          <div class="news-grid" id="news-grid"></div>
+          <p>Conteúdos que mostram pesquisas, projetos e resultados do laboratório em linguagem acessível.</p>
         </div>
-        <aside class="communication-aside">
-          <article class="communication-aside-card">
-            <p class="eyebrow">Fluxo editorial</p>
-            <h3>Informação organizada para públicos diferentes.</h3>
-            <p>Quem chega pelo site encontra a história completa; quem chega pelas redes encontra o caminho rápido para acompanhar o cotidiano do laboratório.</p>
-            <div class="communication-aside-list">
-              <a href="#video">Vídeo institucional <span>→</span></a>
-              <a href="#redes">Redes sociais <span>→</span></a>
-              <a href="#ufrn">LabTam na UFRN <span>→</span></a>
-            </div>
+        <div class="comm-card-grid comm-card-grid-three">
+          <a class="comm-news-card" href="materia.html?id=4">
+            <span>Energia renovável</span>
+            <h3>Calculando o combustível limpo</h3>
+            <p>Pesquisa do LabTam sobre hidrogênio renovável e valorização de resíduos como rota para combustível limpo.</p>
+            <b>Ler no site</b>
+          </a>
+          <a class="comm-news-card" href="materia.html?id=9">
+            <span>Inovação</span>
+            <h3>Projeto com colaboração da UFRN recebe Prêmio Finep</h3>
+            <p>Reconhecimento reforça a presença do LabTam em projetos conectados a tecnologia, sustentabilidade e parceria institucional.</p>
+            <b>Ler no site</b>
+          </a>
+          <a class="comm-news-card" href="materia.html?id=7">
+            <span>Tratamento ambiental</span>
+            <h3>Novo método para águas residuais do petróleo</h3>
+            <p>Conteúdo sobre processos combinados para tratar águas residuais e ampliar soluções ambientais.</p>
+            <b>Ler no site</b>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section comm-soft" id="comparativo">
+      <div class="shell comm-compare-layout">
+        <div>
+          <p class="eyebrow">Comparativo editorial</p>
+          <h2>Como o LabTam aparece em cada canal</h2>
+          <p class="comm-lead">A junção entre Notícias e Mídia faz sentido quando a página assume o papel de hub: ela organiza o conteúdo por função, não por origem.</p>
+        </div>
+        <div class="comm-compare-grid">
+          <article>
+            <span>Site LabTam</span>
+            <h3>Arquivo permanente</h3>
+            <p>Reúne matérias, links internos e conteúdos institucionais que precisam continuar fáceis de encontrar com o tempo.</p>
           </article>
-          <article class="communication-aside-card">
-            <p class="eyebrow">Arquivo vivo</p>
-            <h3>Um hub para crescer com o laboratório.</h3>
-            <p>Novas reportagens, coberturas, fotos e vídeos podem entrar aqui sem fragmentar o menu principal.</p>
+          <article>
+            <span>Portfólio e imprensa</span>
+            <h3>Produção jornalística</h3>
+            <p>Textos externos dão contexto, assinatura e circulação para pesquisas do LabTam, funcionando como vitrine editorial.</p>
           </article>
-        </aside>
+          <article>
+            <span>Redes sociais</span>
+            <h3>Alcance rápido</h3>
+            <p>Publicações curtas reforçam eventos, conquistas, bastidores e chamadas para públicos que acompanham o laboratório no dia a dia.</p>
+          </article>
+        </div>
       </div>
     </section>
 
-    <section class="section communication-video-band" id="video">
+    <section class="section" id="externas">
       <div class="shell">
-        <div class="section-head">
-          <div><p class="eyebrow">LabTam em vídeo</p><h2>Conheça o laboratório por dentro</h2></div>
-          <p>O audiovisual aproxima infraestrutura, equipe e pesquisa de quem ainda não conhece o LabTam.</p>
+        <div class="section-head comm-section-head">
+          <div>
+            <p class="eyebrow">LabTam em circulação</p>
+            <h2>Referências externas para cruzar com o hub</h2>
+          </div>
+          <p>Seleção inicial de conteúdos relacionados ao LabTam para manter a Comunicação conectada ao que já circula fora do site.</p>
         </div>
-        <article class="media-featured-video" id="media-featured-video"></article>
+        <div class="comm-card-grid comm-card-grid-three">
+          <a class="comm-reference-card" href="https://ufrn.br/imprensa/reportagens-e-saberes/95802/do-residuo-ao-combustivel-do-futuro" target="_blank" rel="noopener">
+            <small>Portal UFRN</small>
+            <h3>Do resíduo ao combustível do futuro</h3>
+            <p>Reportagem institucional relacionada à produção de hidrogênio e aproveitamento de resíduos.</p>
+          </a>
+          <a class="comm-reference-card" href="https://defato.com/estado/128361/ferramenta-estima-produo-de-hidrognio-renovvel-a-partir-de-biogs" target="_blank" rel="noopener">
+            <small>DeFato</small>
+            <h3>Ferramenta estima produção de hidrogênio renovável</h3>
+            <p>Matéria externa sobre a ferramenta BioCAL-H2, conectada à pauta de energia renovável.</p>
+          </a>
+          <a class="comm-reference-card" href="https://pt.linkedin.com/posts/labtam-ufrn_pesquisa-de-novos-materiais-para-c%C3%A9lulas-activity-7259222103059537920-sBvo" target="_blank" rel="noopener">
+            <small>LinkedIn LabTam</small>
+            <h3>Pesquisa de novos materiais para células solares</h3>
+            <p>Publicação social sobre reconhecimento de pesquisa em materiais e células solares.</p>
+          </a>
+        </div>
       </div>
     </section>
 
-    <section class="section communication-social-section" id="redes">
-      <div class="shell">
-        <div class="section-head">
-          <div><p class="eyebrow">Acompanhe o LabTam</p><h2>Canais oficiais</h2></div>
-          <p>Redes para acompanhar bastidores, eventos, resultados de pesquisa, chamadas e oportunidades.</p>
+    <section class="section comm-media-band" id="midia">
+      <div class="shell comm-media-layout">
+        <div>
+          <p class="eyebrow">Mídia</p>
+          <h2>Vídeos e presença digital</h2>
+          <p class="comm-lead">A área de mídia entra como camada de apoio: ela mostra o laboratório por dentro e direciona o visitante para os canais onde o LabTam está ativo.</p>
         </div>
-        <div class="social-card-grid" id="media-social-cards"></div>
-      </div>
-    </section>
-
-    <section class="section communication-ufrn-section" id="ufrn">
-      <div class="shell">
-        <div class="section-head">
-          <div><p class="eyebrow">LabTam na UFRN</p><h2>Conteúdo que circula no Portal da Universidade</h2></div>
-          <p>Seleção de publicações institucionais que ampliam a divulgação das pesquisas e atividades do laboratório.</p>
+        <div class="comm-channel-grid">
+          <a href="https://www.instagram.com/labtam.ufrn" target="_blank" rel="noopener"><span>Instagram</span><strong>@labtam.ufrn</strong></a>
+          <a href="https://www.linkedin.com/company/labtam-ufrn" target="_blank" rel="noopener"><span>LinkedIn</span><strong>LabTam/UFRN</strong></a>
+          <a href="https://www.youtube.com/results?search_query=LabTam+UFRN" target="_blank" rel="noopener"><span>YouTube</span><strong>Vídeos do LabTam</strong></a>
         </div>
-        <div class="ufrn-media-grid" id="media-ufrn-articles"></div>
       </div>
     </section>
 
     <section class="section">
-      <div class="shell communication-close-card">
+      <div class="shell comm-close-card">
         <div>
-          <p class="eyebrow">Integração editorial</p>
-          <h2>Um ponto central para tudo que o LabTam comunica.</h2>
-          <p>A página reúne produção própria, vídeo, redes sociais e presença institucional sem dividir a atenção do visitante em abas concorrentes.</p>
+          <p class="eyebrow">Comunicação</p>
+          <h2>Um hub para crescer junto com o laboratório.</h2>
+          <p>Novas matérias, links do portfólio, vídeos e publicações externas podem entrar sem criar novas abas e sem desequilibrar o menu principal.</p>
         </div>
         <a class="btn btn-primary" href="contato.html">Falar com o LabTam</a>
       </div>
@@ -120,6 +161,5 @@
   <script src="assets/js/data.js"></script>
   <script src="assets/js/publications.js"></script>
   <script src="assets/js/app.js"></script>
-  <script src="assets/js/comunicacao.js?v=20260922-2"></script>
 </body>
 </html>
