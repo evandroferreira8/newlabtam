@@ -1,9 +1,10 @@
 (function(){
   const photos = [
-    { src: 'assets/images/carousel.png', alt: 'Registros da equipe do LabTam/UFRN' },
-    { src: 'assets/images/equipe-home.jpg', alt: 'Equipe do LabTam/UFRN' },
-    { src: 'assets/images/materias/materia_1786459290_6a7b349aa08f0.jpeg', alt: 'Atividade de pesquisa e comunicação do LabTam/UFRN' },
-    { src: 'assets/images/materias/materia_1786539685_6a7c6ea5c3bdb.jpg', alt: 'Registro institucional relacionado ao LabTam/UFRN' }
+    { src: 'assets/images/home-carousel-1.jpg', alt: 'Equipe do LabTam em evento científico' },
+    { src: 'assets/images/home-carousel-2.jpg', alt: 'Integrantes do LabTam em atividade acadêmica' },
+    { src: 'assets/images/home-carousel-3.jpg', alt: 'Equipe do LabTam em reunião institucional' },
+    { src: 'assets/images/home-carousel-4.jpg', alt: 'Integrantes do LabTam em registro de equipe' },
+    { src: 'assets/images/home-carousel-5.jpg', alt: 'Equipe do LabTam reunida em auditório' }
   ];
 
   function init(){
