@@ -4,11 +4,12 @@
 .hero-photo-carousel:after{transform:translate(34px,-26px) rotate(4.8deg);opacity:.38}
 .hero-photo-stack{position:relative;z-index:1;aspect-ratio:16/10;border-radius:30px;overflow:hidden;background:linear-gradient(135deg,#f6fbff,#eefaf5);box-shadow:0 24px 52px rgba(22,65,148,.14);border:1px solid rgba(22,65,148,.08)}
 .hero-photo-stack:after{content:"";position:absolute;inset:auto 0 0;height:28%;background:linear-gradient(180deg,transparent,rgba(21,38,62,.10));pointer-events:none;z-index:3}
-.hero-slide{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:linear-gradient(135deg,#f8fbff,#eef8f4);opacity:0;transform:translateX(7%) scale(.985) rotate(.2deg);transition:opacity .9s ease,transform .9s ease;z-index:1}
+.hero-slide{position:absolute;inset:0;width:100%;height:100%;object-fit:contain!important;object-position:center center;background:linear-gradient(135deg,#f8fbff,#eef8f4);opacity:0;transform:translateX(7%) scale(.985) rotate(.2deg);transition:opacity .9s ease,transform .9s ease;z-index:1}
 .hero-slide.is-active{opacity:1;transform:translateX(0) scale(1) rotate(0);z-index:2}
 .hero-carousel-controls{position:absolute;z-index:5;right:18px;bottom:18px;display:flex;gap:8px}
 .hero-carousel-btn{width:38px;height:38px;border:1px solid rgba(255,255,255,.72);border-radius:999px;background:rgba(255,255,255,.78);color:#164194;box-shadow:0 10px 24px rgba(12,33,76,.16);font-size:1.45rem;line-height:1;display:grid;place-items:center;cursor:pointer;backdrop-filter:blur(10px);transition:transform .18s ease,background .18s ease,box-shadow .18s ease}
 .hero-carousel-btn:hover{transform:translateY(-1px);background:#fff;box-shadow:0 14px 28px rgba(12,33,76,.22)}
 .hero-carousel-btn:focus-visible{outline:3px solid rgba(0,149,219,.38);outline-offset:3px}
-@media(max-width:800px){.hero-photo-carousel{transform:none}.hero-photo-carousel:before,.hero-photo-carousel:after{display:none}.hero-photo-stack{border-radius:24px;aspect-ratio:4/3}.hero-carousel-controls{right:12px;bottom:12px}.hero-carousel-btn{width:36px;height:36px}}
+@media(max-width:800px){.hero-photo-carousel{transform:none;margin-top:8px}.hero-photo-carousel:before,.hero-photo-carousel:after{display:none}.hero-photo-stack{border-radius:22px;aspect-ratio:16/9;min-height:auto}.hero-slide{object-fit:contain!important}.hero-carousel-controls{right:10px;bottom:10px}.hero-carousel-btn{width:36px;height:36px;background:rgba(255,255,255,.88)}}
+@media(max-width:430px){.hero-photo-stack{aspect-ratio:16/10;border-radius:18px}.hero-carousel-btn{width:34px;height:34px;font-size:1.32rem}}
 @media(prefers-reduced-motion:reduce){.hero-slide,.hero-carousel-btn{transition:none}}
