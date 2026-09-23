@@ -1,5 +1,6 @@
 (function(){
   const photos = [
+    { src: 'assets/images/equipe-home.jpg', alt: 'Equipe principal do LabTam/UFRN' },
     { src: 'assets/images/home-carousel-1.jpg', alt: 'Equipe do LabTam em evento científico' },
     { src: 'assets/images/home-carousel-2.jpg', alt: 'Integrantes do LabTam em atividade acadêmica' },
     { src: 'assets/images/home-carousel-3.jpg', alt: 'Equipe do LabTam em reunião institucional' },
