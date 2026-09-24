@@ -2,7 +2,7 @@
   const grid=document.getElementById('ods-grid');
   const panel=document.getElementById('ods-panel');
   if(!grid||!panel)return;
-  const iconBase='https://open-sdg.github.io/translations-un-sdg/assets/img/goals';
+  const iconBase='https://open-sdg.org/sdg-translations/assets/img/goals';
   const ods=[
     {id:4,title:'Educação de Qualidade',color:'#c5192d',photo:'assets/images/ods/4.jpg',summary:'Assegurar a educação inclusiva, equitativa e de qualidade, promovendo oportunidades de aprendizagem ao longo da vida.',relation:'No LabTam, esse objetivo aparece na formação científica, na iniciação à pesquisa, na capacitação técnica e na divulgação do conhecimento produzido no laboratório.'},
     {id:5,title:'Igualdade de Gênero',color:'#ff3a21',photo:'assets/images/ods/5.jpg',summary:'Alcançar a igualdade de gênero e fortalecer a participação de meninas e mulheres em todos os espaços da sociedade.',relation:'A atuação do LabTam valoriza a presença feminina na ciência, na pesquisa aplicada, na liderança acadêmica e na construção de equipes diversas.'},
@@ -15,7 +15,7 @@
   ].map(item=>({...item,icon:`${iconBase}/pt-br/${item.id}.png`,iconFallback:`${iconBase}/pt/${item.id}.png`}));
   const esc=(s)=>String(s).replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));
   function drawCards(){
-    grid.innerHTML=ods.map((item,index)=>`<button class="ods-card${index===0?' active':''}" type="button" data-ods="${item.id}" aria-pressed="${index===0?'true':'false'}"><span class="ods-icon-tile"><img class="ods-official-icon" src="${esc(item.icon)}" alt="ODS ${item.id}: ${esc(item.title)}" loading="lazy" onerror="this.onerror=null;this.src='${esc(item.iconFallback)}'"><span class="ods-card-fallback" aria-hidden="true"><b>${item.id}</b><span>${esc(item.title)}</span></span></span></button>`).join('');
+    grid.innerHTML=ods.map((item,index)=>`<button class="ods-card${index===0?' active':''}" type="button" data-ods="${item.id}" aria-pressed="${index===0?'true':'false'}"><span class="ods-icon-tile"><img class="ods-official-icon" src="${esc(item.icon)}" alt="" loading="lazy" onerror="if(!this.dataset.tried){this.dataset.tried='1';this.src='${esc(item.iconFallback)}'}else{this.remove();this.closest('.ods-icon-tile').classList.add('icon-missing')}"><span class="ods-card-fallback"><b>${item.id}</b><span>ODS ${item.id}</span><strong>${esc(item.title)}</strong></span></span></button>`).join('');
     grid.querySelectorAll('.ods-card').forEach(button=>button.addEventListener('click',()=>select(Number(button.dataset.ods))));
   }
   function select(id){
