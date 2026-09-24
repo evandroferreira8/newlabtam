@@ -231,3 +231,36 @@ body[data-page="home"] .ufrn-media-mark{
     padding:24px;
   }
 }
+
+body[data-page="comunicacao"] .comm-hero{
+  background:
+    radial-gradient(circle at 90% 18%,rgba(0,149,219,.08) 0,rgba(0,149,219,0) 27rem),
+    radial-gradient(circle at 12% 100%,rgba(0,157,67,.065) 0,rgba(0,157,67,0) 25rem),
+    linear-gradient(180deg,#fff 0%,#fbfdff 58%,#f7fbff 100%);
+}
+
+body[data-page="comunicacao"] .comm-hero h1{
+  max-width:780px;
+  font-size:clamp(3rem,7vw,6.3rem);
+  line-height:1.02;
+  letter-spacing:-.04em;
+}
+
+body[data-page="comunicacao"] .comm-hero h1 em{
+  font-style:italic;
+  background:var(--grad);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+
+body[data-page="comunicacao"] .comm-hero-lead{
+  color:var(--text);
+  line-height:1.55;
+}
+
+@media(max-width:640px){
+  body[data-page="comunicacao"] .comm-hero h1{
+    font-size:clamp(2.35rem,12vw,4rem);
+  }
+}
