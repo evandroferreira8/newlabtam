@@ -32,6 +32,8 @@
       .partner-logo-card{width:210px;min-height:104px;display:flex;align-items:center;justify-content:center;padding:18px 20px;border-radius:18px;background:#fff;border:1px solid rgba(22,65,148,.11);box-shadow:0 16px 36px rgba(15,40,80,.07)}
       .partner-logo-box{height:68px;width:100%;display:flex;align-items:center;justify-content:center;padding:4px 6px}
       .partner-logo-box img{display:block;max-width:100%;max-height:62px;width:auto;height:auto;object-fit:contain}
+      .partner-logo-card img[alt="UFRN"]{transform:scale(1.22);transform-origin:center}
+
       @keyframes labtam-partners-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
       @media(max-width:760px){.footer-contact-item address{max-width:none}.partner-logo-card{width:180px;min-height:96px;padding:14px}.partner-logo-box{height:60px}.partner-logo-box img{max-height:54px}.partners-logo-track{animation-duration:34s}}
       @media(prefers-reduced-motion:reduce){.partners-logo-track{animation:none;flex-wrap:wrap;width:auto}.partners-logo-carousel{mask-image:none}}
