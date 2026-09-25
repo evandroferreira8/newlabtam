@@ -8,7 +8,7 @@
   <title>LabTam/UFRN — Ciência que transforma</title>
   <link rel="stylesheet" href="assets/css/styles.css">
   <link rel="stylesheet" href="assets/css/home-carousel.css?v=20260922-4">
-  <link rel="stylesheet" href="assets/css/labtam-polish.css?v=20260925-4">
+  <link rel="stylesheet" href="assets/css/labtam-polish.css?v=20260925-5">
   <link rel="stylesheet" href="assets/css/ods-home.css?v=20260925-4">
 </head>
 <body data-page="home">
@@ -39,10 +39,21 @@
 <section class="section section-soft"><div class="shell"><div class="section-head"><div><p class="eyebrow">Parceiros</p><h2>Instituições, agências e empresas parceiras</h2></div></div><div class="partners-strip" id="home-partners"></div></div></section>
 </main>
   <div id="site-footer"></div>
+  <button class="back-to-top" id="back-to-top" type="button" aria-label="Voltar ao topo" title="Voltar ao topo"><span aria-hidden="true">↑</span></button>
   <script src="assets/js/data.js?v=20260925-6"></script>
   <script src="assets/js/publications.js"></script>
   <script src="assets/js/app.js"></script>
   <script src="assets/js/ods-home.js?v=20260925-1"></script>
   <script src="assets/js/home-carousel.js?v=20260922-6"></script>
+  <script>
+    (() => {
+      const btn = document.getElementById('back-to-top');
+      if (!btn) return;
+      const toggle = () => btn.classList.toggle('is-visible', window.scrollY > 420);
+      window.addEventListener('scroll', toggle, { passive: true });
+      btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+      toggle();
+    })();
+  </script>
 </body>
 </html>
