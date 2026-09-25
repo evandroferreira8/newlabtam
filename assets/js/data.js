@@ -2,18 +2,18 @@
 
 (function(){
   const partners = [
-    {name:'UFRN',label:'Universidade Federal do Rio Grande do Norte'},
-    {name:'ANEEL',label:'Agência Nacional de Energia Elétrica'},
-    {name:'ANP',label:'Agência Nacional do Petróleo, Gás Natural e Biocombustíveis'},
-    {name:'CAPES',label:'Coordenação de Aperfeiçoamento de Pessoal de Nível Superior'},
-    {name:'CNPq',label:'Conselho Nacional de Desenvolvimento Científico e Tecnológico'},
-    {name:'FINEP',label:'Financiadora de Estudos e Projetos'},
-    {name:'FUNPEC',label:'Fundação Norte-Rio-Grandense de Pesquisa e Cultura'},
-    {name:'GALP',label:'Energia'},
-    {name:'Karoon',label:'Energy'},
-    {name:'Petrobras',label:'Petróleo Brasileiro S.A.'},
-    {name:'PRH',label:'Programa de Formação de Recursos Humanos'},
-    {name:'TotalEnergies',label:'Energia'}
+    {name:'UFRN',label:'Universidade Federal do Rio Grande do Norte',logo:'UFRN.png'},
+    {name:'ANEEL',label:'Agência Nacional de Energia Elétrica',logo:'ANEEL.png'},
+    {name:'ANP',label:'Agência Nacional do Petróleo, Gás Natural e Biocombustíveis',logo:'ANP.png'},
+    {name:'CAPES',label:'Coordenação de Aperfeiçoamento de Pessoal de Nível Superior',logo:'CAPES.png'},
+    {name:'CNPq',label:'Conselho Nacional de Desenvolvimento Científico e Tecnológico',logo:'CNPQ.png'},
+    {name:'FINEP',label:'Financiadora de Estudos e Projetos',logo:'FINEP.png'},
+    {name:'FUNPEC',label:'Fundação Norte-Rio-Grandense de Pesquisa e Cultura',logo:'FUNPEC.png'},
+    {name:'GALP',label:'Energia',logo:'GAPL.png'},
+    {name:'Karoon',label:'Energy',logo:'KAROON.png'},
+    {name:'Petrobras',label:'Petróleo Brasileiro S.A.',logo:'PETROBRAS.png'},
+    {name:'PRH',label:'Programa de Formação de Recursos Humanos',logo:'PRH.png'},
+    {name:'TotalEnergies',label:'Energia',logo:'TOTAL.png'}
   ];
 
   function injectPolishStyles(){
@@ -29,12 +29,14 @@
       .partners-logo-carousel{position:relative;overflow:hidden;padding:10px 0;mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent)}
       .partners-logo-track{display:flex;gap:14px;width:max-content;animation:labtam-partners-scroll 42s linear infinite}
       .partners-logo-carousel:hover .partners-logo-track{animation-play-state:paused}
-      .partner-logo-card{width:190px;min-height:96px;display:grid;align-content:center;gap:7px;padding:18px 20px;border-radius:18px;background:#fff;border:1px solid rgba(22,65,148,.11);box-shadow:0 16px 36px rgba(15,40,80,.07)}
-      .partner-logo-card strong{font-family:var(--display);font-size:1.35rem;letter-spacing:0;color:#164194;line-height:1}
-      .partner-logo-card span{font-size:.78rem;line-height:1.28;color:#60758f}
-      .partner-logo-card:nth-child(3n+1) strong{color:#164194}.partner-logo-card:nth-child(3n+2) strong{color:#0095db}.partner-logo-card:nth-child(3n+3) strong{color:#009d43}
+      .partner-logo-card{width:210px;min-height:126px;display:grid;grid-template-rows:68px auto;align-items:center;gap:10px;padding:18px 20px;border-radius:18px;background:#fff;border:1px solid rgba(22,65,148,.11);box-shadow:0 16px 36px rgba(15,40,80,.07)}
+      .partner-logo-box{height:68px;display:flex;align-items:center;justify-content:center;padding:4px 6px}
+      .partner-logo-box img{display:block;max-width:100%;max-height:62px;width:auto;height:auto;object-fit:contain}
+      .partner-logo-meta{display:grid;gap:3px;text-align:center}
+      .partner-logo-meta strong{font-family:var(--display);font-size:.92rem;letter-spacing:0;color:var(--ink);line-height:1.12}
+      .partner-logo-meta span{font-size:.72rem;line-height:1.25;color:#60758f}
       @keyframes labtam-partners-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-      @media(max-width:760px){.footer-contact-item address{max-width:none}.partner-logo-card{width:168px;min-height:88px;padding:16px}.partner-logo-card strong{font-size:1.16rem}.partners-logo-track{animation-duration:34s}}
+      @media(max-width:760px){.footer-contact-item address{max-width:none}.partner-logo-card{width:180px;min-height:114px;grid-template-rows:60px auto;padding:14px}.partner-logo-box{height:60px}.partner-logo-box img{max-height:54px}.partner-logo-meta strong{font-size:.86rem}.partner-logo-meta span{font-size:.68rem}.partners-logo-track{animation-duration:34s}}
       @media(prefers-reduced-motion:reduce){.partners-logo-track{animation:none;flex-wrap:wrap;width:auto}.partners-logo-carousel{mask-image:none}}
     `;
     document.head.appendChild(style);
@@ -85,7 +87,7 @@
   function rebuildPartners(){
     const strip = document.getElementById('home-partners');
     if (!strip || strip.dataset.enhanced === 'true') return false;
-    const cards = partners.map((partner) => `<article class="partner-logo-card"><strong>${partner.name}</strong><span>${partner.label}</span></article>`).join('');
+    const cards = partners.map((partner) => `<article class="partner-logo-card"><div class="partner-logo-box"><img src="assets/images/parceiros/${partner.logo}" alt="${partner.name}" loading="lazy"></div><div class="partner-logo-meta"><strong>${partner.name}</strong><span>${partner.label}</span></div></article>`).join('');
     strip.className = 'partners-logo-carousel';
     strip.dataset.enhanced = 'true';
     strip.innerHTML = `<div class="partners-logo-track" aria-label="Parceiros do LabTam">${cards}${cards}</div>`;
