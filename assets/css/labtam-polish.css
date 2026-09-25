@@ -301,3 +301,57 @@ body[data-page="home"] .home-video-card .video-copy .text-link{
     padding:22px 22px 26px;
   }
 }
+
+
+/* Padrão editorial dos cabeçalhos da home, inspirado na seção ODS */
+body[data-page="home"] main > .section:not(.ods-section) .section-head{
+  display:block;
+  margin-bottom:22px;
+}
+body[data-page="home"] main > .section:not(.ods-section) .section-head > div{
+  width:100%;
+}
+body[data-page="home"] main > .section:not(.ods-section) .section-head h2{
+  max-width:none;
+  font-size:clamp(2.35rem,4.6vw,3.85rem);
+  line-height:1.02;
+  letter-spacing:0;
+  margin:0;
+}
+body[data-page="home"] main > .section:not(.ods-section) .section-head > p{
+  max-width:none;
+  margin:9px 0 0;
+  color:var(--text);
+  font-size:1rem;
+  line-height:1.5;
+}
+body[data-page="home"] main > .section:not(.ods-section) .section-head > .text-link{
+  display:inline-block;
+  margin-top:11px;
+  padding:0;
+  white-space:normal;
+}
+body[data-page="home"] .section-media-home .section-head{
+  display:block;
+  margin-bottom:24px;
+}
+body[data-page="home"] .section-media-home .section-head h2{
+  max-width:none;
+  font-size:clamp(2.35rem,4.6vw,3.85rem);
+  line-height:1.02;
+}
+body[data-page="home"] .section-media-home .section-head .text-link{
+  display:inline-block;
+  margin-top:11px;
+  padding:0;
+  white-space:normal;
+}
+@media(max-width:700px){
+  body[data-page="home"] main > .section:not(.ods-section) .section-head{
+    margin-bottom:18px;
+  }
+  body[data-page="home"] main > .section:not(.ods-section) .section-head h2,
+  body[data-page="home"] .section-media-home .section-head h2{
+    font-size:clamp(2rem,10vw,3rem);
+  }
+}
