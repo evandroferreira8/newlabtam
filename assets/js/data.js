@@ -29,14 +29,11 @@
       .partners-logo-carousel{position:relative;overflow:hidden;padding:10px 0;mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent)}
       .partners-logo-track{display:flex;gap:14px;width:max-content;animation:labtam-partners-scroll 42s linear infinite}
       .partners-logo-carousel:hover .partners-logo-track{animation-play-state:paused}
-      .partner-logo-card{width:210px;min-height:126px;display:grid;grid-template-rows:68px auto;align-items:center;gap:10px;padding:18px 20px;border-radius:18px;background:#fff;border:1px solid rgba(22,65,148,.11);box-shadow:0 16px 36px rgba(15,40,80,.07)}
-      .partner-logo-box{height:68px;display:flex;align-items:center;justify-content:center;padding:4px 6px}
+      .partner-logo-card{width:210px;min-height:104px;display:flex;align-items:center;justify-content:center;padding:18px 20px;border-radius:18px;background:#fff;border:1px solid rgba(22,65,148,.11);box-shadow:0 16px 36px rgba(15,40,80,.07)}
+      .partner-logo-box{height:68px;width:100%;display:flex;align-items:center;justify-content:center;padding:4px 6px}
       .partner-logo-box img{display:block;max-width:100%;max-height:62px;width:auto;height:auto;object-fit:contain}
-      .partner-logo-meta{display:grid;gap:3px;text-align:center}
-      .partner-logo-meta strong{font-family:var(--display);font-size:.92rem;letter-spacing:0;color:var(--ink);line-height:1.12}
-      .partner-logo-meta span{font-size:.72rem;line-height:1.25;color:#60758f}
       @keyframes labtam-partners-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-      @media(max-width:760px){.footer-contact-item address{max-width:none}.partner-logo-card{width:180px;min-height:114px;grid-template-rows:60px auto;padding:14px}.partner-logo-box{height:60px}.partner-logo-box img{max-height:54px}.partner-logo-meta strong{font-size:.86rem}.partner-logo-meta span{font-size:.68rem}.partners-logo-track{animation-duration:34s}}
+      @media(max-width:760px){.footer-contact-item address{max-width:none}.partner-logo-card{width:180px;min-height:96px;padding:14px}.partner-logo-box{height:60px}.partner-logo-box img{max-height:54px}.partners-logo-track{animation-duration:34s}}
       @media(prefers-reduced-motion:reduce){.partners-logo-track{animation:none;flex-wrap:wrap;width:auto}.partners-logo-carousel{mask-image:none}}
     `;
     document.head.appendChild(style);
@@ -87,7 +84,7 @@
   function rebuildPartners(){
     const strip = document.getElementById('home-partners');
     if (!strip || strip.dataset.enhanced === 'true') return false;
-    const cards = partners.map((partner) => `<article class="partner-logo-card"><div class="partner-logo-box"><img src="assets/images/parceiros/${partner.logo}" alt="${partner.name}" loading="lazy"></div><div class="partner-logo-meta"><strong>${partner.name}</strong><span>${partner.label}</span></div></article>`).join('');
+    const cards = partners.map((partner) => `<article class="partner-logo-card"><div class="partner-logo-box"><img src="assets/images/parceiros/${partner.logo}" alt="${partner.name}" title="${partner.name}" loading="lazy"></div></article>`).join('');
     strip.className = 'partners-logo-carousel';
     strip.dataset.enhanced = 'true';
     strip.innerHTML = `<div class="partners-logo-track" aria-label="Parceiros do LabTam">${cards}${cards}</div>`;
