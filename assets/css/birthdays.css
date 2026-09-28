@@ -50,3 +50,20 @@ body.birthday-modal-open{overflow:hidden}
   .birthday-calendar{grid-template-columns:1fr;padding:1rem}
   .birthday-dialog{max-height:90vh;border-radius:20px}
 }
+
+
+/* Home — próximo aniversário */
+.home-birthday-section{padding-top:clamp(2rem,4vw,3.5rem);padding-bottom:clamp(2rem,4vw,3.5rem)}
+.home-birthday-card{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:1rem;padding:1.1rem 1.2rem;border:1px solid rgba(22,65,148,.14);border-radius:20px;background:linear-gradient(135deg,rgba(22,65,148,.06),rgba(255,255,255,.96));box-shadow:0 14px 34px rgba(15,42,82,.06)}
+.home-birthday-date{display:grid;place-items:center;width:64px;min-height:64px;border-radius:16px;background:#164194;color:#fff;text-align:center}
+.home-birthday-date strong{display:block;font-size:1.45rem;line-height:1}
+.home-birthday-date span{display:block;margin-top:.18rem;font-size:.68rem;font-weight:800;letter-spacing:.09em}
+.home-birthday-copy{min-width:0}
+.home-birthday-copy p{margin:0;color:#68748a;font-size:.78rem;font-weight:750}
+.home-birthday-copy h2{margin:.18rem 0 0;font-size:clamp(1.15rem,2vw,1.45rem);line-height:1.15}
+.home-birthday-copy small{display:block;margin-top:.3rem;color:#4c5870}
+.home-birthday-link{white-space:nowrap}
+@media(max-width:680px){
+  .home-birthday-card{grid-template-columns:auto 1fr;align-items:start}
+  .home-birthday-link{grid-column:1/-1;width:100%;text-align:center}
+}
