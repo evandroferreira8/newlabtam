@@ -86,7 +86,8 @@
 
   function render(people, source){
     const host=document.getElementById('birthday-widget');
-    if(!host) return;
+    const homeHost=document.getElementById('home-birthday-widget');
+    if(!host && !homeHost) return;
     const now=new Date();
     const ordered=people.map(p=>({...p,next:nextOccurrence(p,now)})).sort((a,b)=>a.next-b.next || a.name.localeCompare(b.name,'pt-BR'));
     const first=ordered[0];
@@ -94,7 +95,7 @@
     const delta=daysUntil(first.next,now);
     const label=delta===0?'Hoje é aniversário':delta===1?'Amanhã é aniversário':`Próximo aniversário · faltam ${delta} dias`;
 
-    host.innerHTML=`
+    if(host) host.innerHTML=`
       <div class="birthday-panel">
         <div class="birthday-grid">
           <div class="birthday-main">
@@ -123,6 +124,21 @@
         </div>
       </div>
     `;
+
+    const homeHost=document.getElementById('home-birthday-widget');
+    if(homeHost){
+      homeHost.innerHTML=`
+        <article class="home-birthday-card">
+          <div class="home-birthday-date"><strong>${String(first.day).padStart(2,'0')}</strong><span>${monthShort[first.month-1]}</span></div>
+          <div class="home-birthday-copy">
+            <p>${delta===0?'Hoje no LabTam':delta===1?'Amanhã no LabTam':'Próximo aniversário'}</p>
+            <h2>${first.name}</h2>
+            <small>${first.day} de ${monthNames[first.month-1]}${delta>1?` · faltam ${delta} dias`:''}</small>
+          </div>
+          <a class="btn btn-secondary home-birthday-link" href="equipe.html#aniversarios">Ver aniversários</a>
+        </article>
+      `;
+    }
 
     const calendar=document.getElementById('birthday-calendar');
     if(calendar){
