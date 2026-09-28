@@ -125,7 +125,6 @@
       </div>
     `;
 
-    const homeHost=document.getElementById('home-birthday-widget');
     if(homeHost){
       homeHost.innerHTML=`
         <article class="home-birthday-card">
