@@ -7,6 +7,7 @@
   <meta name="description" content="Conheça a equipe do Laboratório de Tecnologia Ambiental da UFRN.">
   <title>Equipe — LabTam/UFRN</title>
   <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/birthdays.css?v=20260928-1">
 </head>
 <body data-page="equipe">
   <div id="site-header"></div>
@@ -43,6 +44,20 @@
       </div>
     </section>
 
+    <section class="section birthday-section" aria-labelledby="birthday-heading">
+      <div class="shell">
+        <div id="birthday-widget">
+          <div class="birthday-panel">
+            <div class="birthday-main">
+              <p class="birthday-kicker">Datas da equipe</p>
+              <h2 class="birthday-title" id="birthday-heading">Aniversários do LabTam</h2>
+              <p class="birthday-intro">Carregando o calendário da equipe…</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="section team-directory-section" id="diretorio-equipe">
       <div class="shell">
         <div class="section-head team-directory-head">
@@ -72,6 +87,17 @@
     </section>
   </main>
 
+  <div class="birthday-modal" id="birthday-modal" hidden>
+    <div class="birthday-modal-backdrop" data-birthday-close></div>
+    <section class="birthday-dialog" role="dialog" aria-modal="true" aria-labelledby="birthday-modal-title">
+      <div class="birthday-dialog-head">
+        <h2 id="birthday-modal-title">Calendário de aniversários</h2>
+        <button class="birthday-close" type="button" aria-label="Fechar calendário" data-birthday-close>×</button>
+      </div>
+      <div class="birthday-calendar" id="birthday-calendar"></div>
+    </section>
+  </div>
+
   <div class="team-profile-modal" id="team-profile-modal" hidden>
     <div class="team-profile-backdrop" data-team-close></div>
     <section class="team-profile-dialog" role="dialog" aria-modal="true" aria-labelledby="team-profile-name">
@@ -84,6 +110,7 @@
   <script src="assets/js/data.js"></script>
   <script src="assets/js/publications.js"></script>
   <script src="assets/js/app.js"></script>
+  <script src="assets/js/birthdays.js?v=20260928-1"></script>
   <link rel="stylesheet" href="assets/css/layout-fixes.css?v=20260922-5">
   <script>
     (() => {
