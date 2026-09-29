@@ -337,6 +337,25 @@ window.LABTAM_PUBLICATIONS = [
     $('.search-close')?.addEventListener('click',()=>sp.hidden=true);
     sp?.addEventListener('click',e=>{if(e.target===sp)sp.hidden=true;});
     document.addEventListener('keydown',e=>{if(e.key==='Escape' && sp && !sp.hidden) sp.hidden=true;});
+
+    let backToTop=$('#back-to-top');
+    if(!backToTop){
+      backToTop=document.createElement('button');
+      backToTop.className='back-to-top';
+      backToTop.id='back-to-top';
+      backToTop.type='button';
+      backToTop.setAttribute('aria-label','Voltar ao topo');
+      backToTop.setAttribute('title','Voltar ao topo');
+      backToTop.innerHTML='<span aria-hidden="true">↑</span>';
+      document.body.appendChild(backToTop);
+    }
+    if(backToTop.dataset.ready!=='true'){
+      const toggleBackToTop=()=>backToTop.classList.toggle('is-visible',window.scrollY>420);
+      window.addEventListener('scroll',toggleBackToTop,{passive:true});
+      backToTop.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+      backToTop.dataset.ready='true';
+      toggleBackToTop();
+    }
   }
 
   function statsHTML(){ return (D.stats||[]).map(s=>`<div class="stat"><strong>${esc(s.value)}</strong><span>${esc(s.label)}</span></div>`).join(''); }
