@@ -641,6 +641,6 @@ window.LABTAM_PUBLICATIONS = [
   document.readyState==='loading'?document.addEventListener('DOMContentLoaded',init):init();
 })();
 
-;(()=>{const id="labtam-refinements";if(document.getElementById(id))return;const link=document.createElement("link");link.id=id;link.rel="stylesheet";link.href="assets/css/refinements.css?v=20260920-2";document.head.appendChild(link);})();
+;(()=>{const id="labtam-refinements";if(document.getElementById(id))return;const link=document.createElement("link");link.id=id;link.rel="stylesheet";link.href="assets/css/refinements.css?v=20260929-2";document.head.appendChild(link);})();
 
 ;(()=>{const s=document.createElement("style");s.textContent=".site-header .main-nav{flex-wrap:wrap;column-gap:18px;row-gap:0}.site-header .main-nav a{padding-block:12px}";document.head.appendChild(s);})();
